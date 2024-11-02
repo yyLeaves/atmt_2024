@@ -1,5 +1,5 @@
 #!/bin/bash
-batch_sizes=(1 4)
+batch_sizes=(16 64)
 learning_rates=(0.0003 0.0006 0.0012 0.0024 0.0048)
 
 for bs in "${batch_sizes[@]}"; do
