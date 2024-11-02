@@ -1,0 +1,14 @@
+INFO: COMMAND: train.py --data data/en-fr/prepared --source-lang fr --target-lang en --save-dir assignments/03/output/en-fr_bs1_lr0096/checkpoints/ --log-file logs/en-fr_bs1_lr0096.log --batch-size 1 --lr 0.0096
+INFO: Arguments: {'cuda': False, 'data': 'data/en-fr/prepared', 'source_lang': 'fr', 'target_lang': 'en', 'max_tokens': None, 'batch_size': 1, 'train_on_tiny': False, 'arch': 'lstm', 'max_epoch': 10000, 'clip_norm': 4.0, 'lr': 0.0096, 'patience': 3, 'log_file': 'logs/en-fr_bs1_lr0096.log', 'save_dir': 'assignments/03/output/en-fr_bs1_lr0096/checkpoints/', 'restore_file': 'checkpoint_last.pt', 'save_interval': 1, 'no_save': False, 'epoch_checkpoints': False, 'encoder_embed_dim': 64, 'encoder_embed_path': None, 'encoder_hidden_size': 64, 'encoder_num_layers': 1, 'encoder_bidirectional': 'True', 'encoder_dropout_in': 0.25, 'encoder_dropout_out': 0.25, 'decoder_embed_dim': 64, 'decoder_embed_path': None, 'decoder_hidden_size': 128, 'decoder_num_layers': 1, 'decoder_dropout_in': 0.25, 'decoder_dropout_out': 0.25, 'decoder_use_attention': 'True', 'decoder_use_lexical_model': 'False', 'device_id': 0}
+INFO: Loaded a source dictionary (fr) with 4000 words
+INFO: Loaded a target dictionary (en) with 4000 words
+INFO: Built a model with 1308576 parameters
+INFO: Epoch 000: loss 7.582 | lr 0.0096 | num_tokens 9.1 | batch_size 1 | grad_norm 7.524e+07 | clip 0.9999
+INFO: Epoch 000: valid_loss 7.11 | num_tokens 9.14 | batch_size 500 | valid_perplexity 1.23e+03
+INFO: Epoch 001: loss 9.002 | lr 0.0096 | num_tokens 9.1 | batch_size 1 | grad_norm inf | clip 1
+INFO: Epoch 001: valid_loss 7.78 | num_tokens 9.14 | batch_size 500 | valid_perplexity 2.39e+03
+INFO: Epoch 002: loss 10 | lr 0.0096 | num_tokens 9.1 | batch_size 1 | grad_norm inf | clip 1
+INFO: Epoch 002: valid_loss 9.98 | num_tokens 9.14 | batch_size 500 | valid_perplexity 2.15e+04
+INFO: Epoch 003: loss 10.44 | lr 0.0096 | num_tokens 9.1 | batch_size 1 | grad_norm inf | clip 1
+INFO: Epoch 003: valid_loss 8.62 | num_tokens 9.14 | batch_size 500 | valid_perplexity 5.53e+03
+INFO: No validation set improvements observed for 3 epochs. Early stop!
