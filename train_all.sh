@@ -23,8 +23,7 @@ for bs in "${batch_sizes[@]}"; do
             --save-dir "$output_dir" \
             --log-file "$log_file" \
             --batch-size "$bs" \
-            --lr "$lr" \
-            --cuda
+            --lr "$lr"
 
         git add .
         git commit -m "Training results: BS=$bs, LR=$lr"
