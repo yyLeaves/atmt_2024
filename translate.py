@@ -26,6 +26,8 @@ def get_args():
     parser.add_argument('--output', required=True, type=str, help='path to the output file destination')
     parser.add_argument('--max-len', default=128, type=int, help='maximum length of generated sequence')
 
+    parser.add_argument('--log-file', default='logs/translate.log', help='path to the log file')
+
     return parser.parse_args()
 
 
