@@ -33,7 +33,7 @@ for checkpoint in "$CHECKPOINT_DIR"/en-fr_bs*; do
     echo "Done postprocessing translations"
 
     echo "Calculating BLEU score for $experiment_name:"
-    cat "assignments/03/output/${experiment_name}/translations.p.txt" | sacrebleu data/en-fr/raw/test.fr > "assignments/03/output/${experiment_name}/bleu.txt"
+    cat "assignments/03/output/${experiment_name}/translations.p.txt" | sacrebleu data/en-fr/raw/test.en > "assignments/03/output/${experiment_name}/bleu.txt"
     
     echo "Completed processing, postprocessing, and evaluation for $checkpoint"
     echo "--------------------------------"
