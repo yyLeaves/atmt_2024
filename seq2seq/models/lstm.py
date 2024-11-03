@@ -223,6 +223,8 @@ class LSTMDecoder(Seq2SeqDecoder):
 
         self.use_lexical_model = use_lexical_model
         if self.use_lexical_model:
+            self.context_projection = nn.Linear(embed_dim, embed_dim, bias=False)
+            self.lexical_projection = nn.Linear(embed_dim, len(dictionary))
             # __LEXICAL: Add parts of decoder architecture corresponding to the LEXICAL MODEL here
             pass
             # TODO: --------------------------------------------------------------------- /CUT
@@ -290,6 +292,10 @@ class LSTMDecoder(Seq2SeqDecoder):
                 attn_weights[:, j, :] = step_attn_weights
 
                 if self.use_lexical_model:
+                    # Compute and collect LEXICAL MODEL context vectors here
+                    lexical_context = torch.tanh(torch.bmm(step_attn_weights.unsqueeze(dim=1),
+                                                           src_embeddings.transpose(0, 1)).squeeze(dim=1))
+                    lexical_contexts.append(torch.tanh(self.context_projection(lexical_context)) + lexical_context)
                     # __LEXICAL: Compute and collect LEXICAL MODEL context vectors here
                     # TODO: --------------------------------------------------------------------- CUT
                     pass
@@ -315,6 +321,9 @@ class LSTMDecoder(Seq2SeqDecoder):
             # __LEXICAL: Incorporate the LEXICAL MODEL into the prediction of target tokens here
             pass
             # TODO: --------------------------------------------------------------------- /CUT
+            lexical_contexts = torch.cat(lexical_contexts, dim=0).view(tgt_time_steps, batch_size, self.embed_dim)
+            lexical_contexts = lexical_contexts.transpose(0, 1)
+            decoder_output += self.lexical_projection(lexical_contexts)
 
 
         return decoder_output, attn_weights
