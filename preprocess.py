@@ -44,6 +44,8 @@ def get_args():
     parser.add_argument('--vocab-trg', default=None, type=str, help='path to dictionary')
     parser.add_argument('--quiet', action='store_true', help='no logging')
 
+    parser.add_argument('--log-file', default=None, help='path to save logs')
+
     return parser.parse_args()
 
 

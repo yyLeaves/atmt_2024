@@ -3,3 +3,5 @@ numpy
 sacrebleu
 torch==2.0.1
 tqdm
+matplotlib
+pandas

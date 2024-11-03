@@ -1,0 +1,6 @@
+Epoch 107: loss 1.314 | lr 0.0012 | num_tokens 11.08 | batch_size 250 | grad_norm 6.611 | clip 0.525
+Epoch 107: valid_loss 2.16 | num_tokens 10.1 | batch_size 500 | valid_perplexity 8.68
+Epoch 108: loss 1.306 | lr 0.0012 | num_tokens 11.08 | batch_size 250 | grad_norm 5.913 | clip 0.575
+Epoch 108: valid_loss 2.15 | num_tokens 10.1 | batch_size 500 | valid_perplexity 8.55
+Epoch 109: loss 1.289 | lr 0.0012 | num_tokens 11.08 | batch_size 250 | grad_norm 6.001 | clip 0.5
+Epoch 109: valid_loss 2.15 | num_tokens 10.1 | batch_size 500 | valid_perplexity 8.55
